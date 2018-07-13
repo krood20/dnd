@@ -7,3 +7,7 @@ app = Flask(__name__, static_folder=STATIC_FOLDER)
 @app.route('/')
 def homepage():
     return render_template('index.html')
+
+@app.route('/dice')
+def dicepage():
+    return render_template('dice.html')
