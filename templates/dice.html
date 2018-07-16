@@ -5,6 +5,33 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
+	<style>
+		* {
+			font-family: Helvetica, Arial, sans-serif;
+			text-align: center;
+		}
+		button {
+			background-color: rgb(82, 186, 179);
+			border-radius: 6px;
+			border: none;
+			color: rgb(255, 255, 255);
+			padding: 10px;
+			text-transform: uppercase;
+			width: 200px;
+			cursor: pointer;
+		}
+		#placeholder {
+			height: 100px;
+			width: 100px;
+			padding: 50px;
+			margin: 50px auto;
+			border: 1px solid gray;
+			border-radius: 10px;
+			font-size:80px;
+		}
+	</style>
+
 	<head>
 		<title>Generic - Spectral by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -19,14 +46,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Spectral</a></h1>
+						<h1><a href="/">Spectral</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
+											<li><a href="/">Home</a></li>
 											<li><a href="generic.html">Generic</a></li>
 											<li><a href="elements.html">Elements</a></li>
 											<li><a href="#">Sign Up</a></li>
@@ -48,6 +75,43 @@
 							<div class="inner">
 
 								<h3>Lorem ipsum dolor</h3>
+
+
+
+  							<p id="placeholder">
+
+  							</p>
+  							<button id="button">Roll Dice</button>
+
+								<script>
+
+									var dice = {
+									  sides: 6,
+									  roll: function () {
+									    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+									    return randomNumber;
+									  }
+									}
+
+									//Prints dice roll to the page
+
+									function printNumber(number) {
+									  var placeholder = document.getElementById('placeholder');
+									  placeholder.innerHTML = number;
+									}
+
+									var button = document.getElementById('button');
+
+									button.onclick = function() {
+									  var result = dice.roll();
+									  printNumber(result);
+									};
+
+								</script>
+
+
+
+
 								<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
 
 								<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
