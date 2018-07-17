@@ -11,3 +11,7 @@ def homepage():
 @app.route('/dice')
 def dicepage():
     return render_template('dice.html')
+
+@app.route('/character_builder')
+def characterbuilder():
+    return render_template('character_builder.html')
