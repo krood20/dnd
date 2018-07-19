@@ -5,6 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
 	<head>
 		<title>5e Character Builder</title>
 		<meta charset="utf-8" />
@@ -39,6 +40,16 @@
 						</nav>
 					</header>
 
+<script>
+	//Using this javascript to display certain things based on selection
+	var spellClasses = ['wizard', 'warlock', 'sorcerer', 'bard', 'cleric', 'druid'];
+
+	$('select[name=class]').change(function(){
+		$('select[name=spells]').toggle(spellClasses.indexOf($(this).val())>=0);
+	});
+
+</script>
+
 				<!-- Main -->
 					<article id="main">
 						<header>
@@ -48,9 +59,10 @@
 						<section class="wrapper style5">
 							<div class="inner">
 
+							<form>
 								<h3>Select Your Race:</h3>
 
-								<select>
+								<select name="race" id="races">
   								<option value="dragonborn">Dragonborn</option>
   								<option value="elf">Elf</option>
   								<option value="dwarf">Dwarf</option>
@@ -66,7 +78,7 @@
 
 								<h3>Select Your Class:</h3>
 
-								<select>
+								<select name="class" id="classes">
   								<option value="barbarian">Barbarian</option>
   								<option value="bard">Bard</option>
   								<option value="cleric">Cleric</option>
@@ -81,7 +93,80 @@
 									<option value="wizard">Wizard</option>
 								</select>
 
+								<br><br>
+
+								<h3>Select Your Alignment:</h3>
+
+								<select name="alignment" id="alignment">
+  								<option value="chaoticevil">Chaotic Evil</option>
+									<option value="chaoticgood">Chaotic Good</option>
+									<option value="chaoticneutral">Chaotic Neutral</option>
+									<option value="lawfulevil">Lawful Evil</option>
+									<option value="lawfulgood">Lawful Good</option>
+									<option value="lawfulneutral">Lawful Neutral</option>
+									<option value="neutralevil">Neutral Evil</option>
+									<option value="neutralgood">Neutral Good</option>
+									<option value="neutral">Neutral</option>
+								</select>
+
+								<br><br>
+
+								<!-- <> Need to make spell and cantrip sets for each type of user, only display if that aspect is selected -->
+
+								<h3>Select Your Cantrips:</h3>
+
+								<section class="container">
+									<input type="checkbox" class="acidsplash" name="cantrips" value="acidsplash" id="acidsplash">
+									<label for="acidsplash" class="label">Acid Splash</label>
+									<input type="checkbox" class="boomingblade" name="cantrips" value="boomingblade" id="boomingblade">
+									<label for="boomingblade" class="label">Booming Blade</label>
+									<input type="checkbox" class="chilltouch" name="cantrips" value="chilltouch" id="chilltouch">
+									<label for="chilltouch" class="label">Chill Touch</label>
+									<input type="checkbox" class="dancinglights" name="cantrips" value="dancinglights" id="dancinglights">
+									<label for="dancinglights" class="label">Dancing Lights</label>
+									<input type="checkbox" class="firebolt" name="cantrips" value="firebolt" id="firebolt">
+									<label for="firebolt" class="label">Fire Bolt</label>
+									<input type="checkbox" class="green-flameblade" name="cantrips" value="green-flameblade" id="green-flameblade">
+									<label for="green-flameblade" class="label">Green-Flame Blade</label>
+									<input type="checkbox" class="light" name="cantrips" value="light" id="light">
+									<label for="light" class="label">Light</label>
+									<input type="checkbox" class="magehand" name="cantrips" value="magehand" id="magehand">
+									<label for="magehand" class="label">Mage Hand</label>
+									<input type="checkbox" class="mending" name="cantrips" value="mending" id="mending">
+									<label for="mending" class="label">Mending</label>
+									<input type="checkbox" class="message" name="cantrips" value="message" id="message">
+									<label for="message" class="label">Message</label>
+									<input type="checkbox" class="minorillusion" name="cantrips" value="minorillusion" id="minorillusion">
+									<label for="minorillusion" class="label">Minor Illusion</label>
+									<input type="checkbox" class="poisonspray" name="cantrips" value="poisonspray" id="poisonspray">
+									<label for="poisonspray" class="label">Poison Spray</label>
+									<input type="checkbox" class="prestidigitation" name="cantrips" value="prestidigitation" id="prestidigitation">
+									<label for="prestidigitation" class="label">Prestidigitation</label>
+									<input type="checkbox" class="rayoffrost" name="cantrips" value="rayoffrost" id="rayoffrost">
+									<label for="rayoffrost" class="label">Ray of Frost</label>
+									<input type="checkbox" class="shockinggrasp" name="cantrips" value="shockinggrasp" id="shockinggrasp">
+									<label for="shockinggrasp" class="label">Shocking Grasp</label>
+									<input type="checkbox" class="swordburst" name="cantrips" value="swordburst" id="swordburst">
+									<label for="swordburst" class="label">Sword Burst</label>
+									<input type="checkbox" class="truestrike" name="cantrips" value="truestrike" id="truestrike">
+									<label for="truestrike" class="label">True Strike</label>
+								</section>
+
+								<br><br>
+
+								<h3>Select Your Spells:</h3>
+
+								<section class="container">
+									<input type="checkbox" class="acidsplash" name="spells" value="acidsplash" id="acidsplash">
+									<label for="acidsplash" class="label">Acid Splash</label>
+
+								</section>
+
+
+
+							</form>
 							</div>
+
 						</section>
 					</article>
 
