@@ -42,92 +42,120 @@
 
 <script>
 
-	function myFunction(event) {
+	function whichClass(event) {
 			var class_menu = document.getElementById("classes");
-			var wizard_cantrips = document.getElementById("wizard_cantrips");
-
 			var class_selected = class_menu.options[class_menu.selectedIndex].text;
+
+			var bard_cantrips = document.getElementById("bard_cantrips");
+			var cleric_cantrips = document.getElementById("cleric_cantrips");
+			var druid_cantrips = document.getElementById("druid_cantrips");
+			var wizard_cantrips = document.getElementById("wizard_cantrips");
 
 			if(class_selected == 'Barbarian'){
 				//barbarian_cantrips.style.display = "none";
 
 				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Bard'){
-
+				bard_cantrips.style.display = "block";
 
 				//block other cantrips here
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Cleric'){
-
+				cleric_cantrips.style.display = "block";
 
 				//none other cantrips here
+				bard_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Druid'){
-
+				druid_cantrips.style.display = "block";
 
 				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Fighter'){
 
 
 				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Monk'){
 
 
 				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Paladin'){
 
 
 				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Ranger'){
 
 
-				//none other cantrips here
+				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Rogue'){
 
 
-				//none other cantrips here
+				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Sorcerer'){
 
 
-				//none other cantrips here
+				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Warlock'){
 
 
 				//block other cantrips here
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 				wizard_cantrips.style.display = "none";
 			}
 			else if(class_selected == 'Wizard'){
 				wizard_cantrips.style.display = "block";
 
 				//block other cantrips here
-
+				bard_cantrips.style.display = "none";
+				cleric_cantrips.style.display = "none";
+				druid_cantrips.style.display = "none";
 			}
 
-
-			// if (wizard_cantrips.style.display === "none") {
-			// 		wizard_cantrips.style.display = "block";
-			// }
-			// else {
-			// 		wizard_cantrips.style.display = "none";
-			// }
 	}
 
 </script>
@@ -160,7 +188,7 @@
 
 								<h3>Select Your Class:</h3>
 
-								<select onchange="myFunction.call(this, event)" name="class" id="classes">
+								<select onchange="whichClass.call(this, event)" name="class" id="classes">
   								<option value="barbarian">Barbarian</option>
   								<option value="bard">Bard</option>
   								<option value="cleric">Cleric</option>
@@ -192,6 +220,71 @@
 								</select>
 
 								<!-- <> Need to make spell and cantrip sets for each type of user, only display if that aspect is selected -->
+								<div id="bard_cantrips" style="display: none;">
+									<br><br>
+									<h3>Select Your Bard Cantrips:</h3>
+									<section class="container">
+										<input type="checkbox" class="dancinglights" name="cantrips" value="dancinglights" id="dancinglights">
+										<label for="dancinglights" class="label">Dancing Lights</label>
+										<input type="checkbox" class="light" name="cantrips" value="light" id="light">
+										<label for="light" class="label">Light</label>
+										<input type="checkbox" class="magehand" name="cantrips" value="magehand" id="magehand">
+										<label for="magehand" class="label">Mage Hand</label>
+										<input type="checkbox" class="mending" name="cantrips" value="mending" id="mending">
+										<label for="mending" class="label">Mending</label>
+										<input type="checkbox" class="message" name="cantrips" value="message" id="message">
+										<label for="message" class="label">Message</label>
+										<input type="checkbox" class="minorillusion" name="cantrips" value="minorillusion" id="minorillusion">
+										<label for="minorillusion" class="label">Minor Illusion</label>
+										<input type="checkbox" class="prestidigitation" name="cantrips" value="prestidigitation" id="prestidigitation">
+										<label for="prestidigitation" class="label">Prestidigitation</label>
+										<input type="checkbox" class="truestrike" name="cantrips" value="truestrike" id="truestrike">
+										<label for="truestrike" class="label">True Strike</label>
+										<input type="checkbox" class="viciousmockery" name="cantrips" value="viciousmockery" id="viciousmockery">
+										<label for="viciousmockery" class="label">Vicious Mockery</label>
+									</section>
+								</div>
+
+								<div id="cleric_cantrips" style="display: none;">
+									<br><br>
+									<h3>Select Your Cleric Cantrips:</h3>
+									<section class="container">
+										<input type="checkbox" class="guidance" name="cantrips" value="guidance" id="guidance">
+										<label for="guidance" class="label">Guidance</label>
+										<input type="checkbox" class="light" name="cantrips" value="light" id="light">
+										<label for="light" class="label">Light</label>
+										<input type="checkbox" class="mending" name="cantrips" value="mending" id="mending">
+										<label for="mending" class="label">Mending</label>
+										<input type="checkbox" class="resistance" name="cantrips" value="resistance" id="resistance">
+										<label for="resistance" class="label">Resistance</label>
+										<input type="checkbox" class="sacredflame" name="cantrips" value="sacredflame" id="sacredflame">
+										<label for="sacredflame" class="label">Sacred Flame</label>
+										<input type="checkbox" class="sparethedying" name="cantrips" value="sparethedying" id="sparethedying">
+										<label for="sparethedying" class="label">Spare The Dying</label>
+										<input type="checkbox" class="thaumaturgy" name="cantrips" value="thaumaturgy" id="thaumaturgy">
+										<label for="thaumaturgy" class="label">Thaumaturgy</label>
+									</section>
+								</div>
+
+								<div id="druid_cantrips" style="display: none;">
+									<br><br>
+									<h3>Select Your Druid Cantrips:</h3>
+									<section class="container">
+										<input type="checkbox" class="guidance" name="cantrips" value="guidance" id="guidance">
+										<label for="guidance" class="label">Guidance</label>
+										<input type="checkbox" class="mending" name="cantrips" value="mending" id="mending">
+										<label for="mending" class="label">Mending</label>
+										<input type="checkbox" class="poisonspray" name="cantrips" value="poisonspray" id="poisonspray">
+										<label for="poisonspray" class="label">Poison Spray</label>
+										<input type="checkbox" class="produceflame" name="cantrips" value="produceflame" id="produceflame">
+										<label for="produceflame" class="label">Produce Flame</label>
+										<input type="checkbox" class="resistance" name="cantrips" value="resistance" id="resistance">
+										<label for="resistance" class="label">Resistance</label>
+										<input type="checkbox" class="shillelagh" name="cantrips" value="shillelagh" id="shillelagh">
+										<label for="shillelagh" class="label">Shillelagh</label>
+									</section>
+								</div>
+
 
 								<div id="wizard_cantrips" style="display: none;">
 									<br><br>
