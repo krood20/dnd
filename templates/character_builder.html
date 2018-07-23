@@ -41,12 +41,94 @@
 					</header>
 
 <script>
-	//Using this javascript to display certain things based on selection
-	var spellClasses = ['wizard', 'warlock', 'sorcerer', 'bard', 'cleric', 'druid'];
 
-	$('select[name=class]').change(function(){
-		$('select[name=spells]').toggle(spellClasses.indexOf($(this).val())>=0);
-	});
+	function myFunction(event) {
+			var class_menu = document.getElementById("classes");
+			var wizard_cantrips = document.getElementById("wizard_cantrips");
+
+			var class_selected = class_menu.options[class_menu.selectedIndex].text;
+
+			if(class_selected == 'Barbarian'){
+				//barbarian_cantrips.style.display = "none";
+
+				//block other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Bard'){
+
+
+				//block other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Cleric'){
+
+
+				//none other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Druid'){
+
+
+				//block other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Fighter'){
+
+
+				//block other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Monk'){
+
+
+				//block other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Paladin'){
+
+
+				//block other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Ranger'){
+
+
+				//none other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Rogue'){
+
+
+				//none other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Sorcerer'){
+
+
+				//none other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Warlock'){
+
+
+				//block other cantrips here
+				wizard_cantrips.style.display = "none";
+			}
+			else if(class_selected == 'Wizard'){
+				wizard_cantrips.style.display = "block";
+
+				//block other cantrips here
+
+			}
+
+
+			// if (wizard_cantrips.style.display === "none") {
+			// 		wizard_cantrips.style.display = "block";
+			// }
+			// else {
+			// 		wizard_cantrips.style.display = "none";
+			// }
+	}
 
 </script>
 
@@ -78,7 +160,7 @@
 
 								<h3>Select Your Class:</h3>
 
-								<select name="class" id="classes">
+								<select onchange="myFunction.call(this, event)" name="class" id="classes">
   								<option value="barbarian">Barbarian</option>
   								<option value="bard">Bard</option>
   								<option value="cleric">Cleric</option>
@@ -109,48 +191,49 @@
 									<option value="neutral">Neutral</option>
 								</select>
 
-								<br><br>
-
 								<!-- <> Need to make spell and cantrip sets for each type of user, only display if that aspect is selected -->
 
-								<h3>Select Your Cantrips:</h3>
+								<div id="wizard_cantrips" style="display: none;">
+									<br><br>
+									<h3>Select Your Wizard Cantrips:</h3>
+									<section class="container">
+										<input type="checkbox" class="acidsplash" name="cantrips" value="acidsplash" id="acidsplash">
+										<label for="acidsplash" class="label">Acid Splash</label>
+										<input type="checkbox" class="boomingblade" name="cantrips" value="boomingblade" id="boomingblade">
+										<label for="boomingblade" class="label">Booming Blade</label>
+										<input type="checkbox" class="chilltouch" name="cantrips" value="chilltouch" id="chilltouch">
+										<label for="chilltouch" class="label">Chill Touch</label>
+										<input type="checkbox" class="dancinglights" name="cantrips" value="dancinglights" id="dancinglights">
+										<label for="dancinglights" class="label">Dancing Lights</label>
+										<input type="checkbox" class="firebolt" name="cantrips" value="firebolt" id="firebolt">
+										<label for="firebolt" class="label">Fire Bolt</label>
+										<input type="checkbox" class="green-flameblade" name="cantrips" value="green-flameblade" id="green-flameblade">
+										<label for="green-flameblade" class="label">Green-Flame Blade</label>
+										<input type="checkbox" class="light" name="cantrips" value="light" id="light">
+										<label for="light" class="label">Light</label>
+										<input type="checkbox" class="magehand" name="cantrips" value="magehand" id="magehand">
+										<label for="magehand" class="label">Mage Hand</label>
+										<input type="checkbox" class="mending" name="cantrips" value="mending" id="mending">
+										<label for="mending" class="label">Mending</label>
+										<input type="checkbox" class="message" name="cantrips" value="message" id="message">
+										<label for="message" class="label">Message</label>
+										<input type="checkbox" class="minorillusion" name="cantrips" value="minorillusion" id="minorillusion">
+										<label for="minorillusion" class="label">Minor Illusion</label>
+										<input type="checkbox" class="poisonspray" name="cantrips" value="poisonspray" id="poisonspray">
+										<label for="poisonspray" class="label">Poison Spray</label>
+										<input type="checkbox" class="prestidigitation" name="cantrips" value="prestidigitation" id="prestidigitation">
+										<label for="prestidigitation" class="label">Prestidigitation</label>
+										<input type="checkbox" class="rayoffrost" name="cantrips" value="rayoffrost" id="rayoffrost">
+										<label for="rayoffrost" class="label">Ray of Frost</label>
+										<input type="checkbox" class="shockinggrasp" name="cantrips" value="shockinggrasp" id="shockinggrasp">
+										<label for="shockinggrasp" class="label">Shocking Grasp</label>
+										<input type="checkbox" class="swordburst" name="cantrips" value="swordburst" id="swordburst">
+										<label for="swordburst" class="label">Sword Burst</label>
+										<input type="checkbox" class="truestrike" name="cantrips" value="truestrike" id="truestrike">
+										<label for="truestrike" class="label">True Strike</label>
+									</section>
+								</div>
 
-								<section class="container">
-									<input type="checkbox" class="acidsplash" name="cantrips" value="acidsplash" id="acidsplash">
-									<label for="acidsplash" class="label">Acid Splash</label>
-									<input type="checkbox" class="boomingblade" name="cantrips" value="boomingblade" id="boomingblade">
-									<label for="boomingblade" class="label">Booming Blade</label>
-									<input type="checkbox" class="chilltouch" name="cantrips" value="chilltouch" id="chilltouch">
-									<label for="chilltouch" class="label">Chill Touch</label>
-									<input type="checkbox" class="dancinglights" name="cantrips" value="dancinglights" id="dancinglights">
-									<label for="dancinglights" class="label">Dancing Lights</label>
-									<input type="checkbox" class="firebolt" name="cantrips" value="firebolt" id="firebolt">
-									<label for="firebolt" class="label">Fire Bolt</label>
-									<input type="checkbox" class="green-flameblade" name="cantrips" value="green-flameblade" id="green-flameblade">
-									<label for="green-flameblade" class="label">Green-Flame Blade</label>
-									<input type="checkbox" class="light" name="cantrips" value="light" id="light">
-									<label for="light" class="label">Light</label>
-									<input type="checkbox" class="magehand" name="cantrips" value="magehand" id="magehand">
-									<label for="magehand" class="label">Mage Hand</label>
-									<input type="checkbox" class="mending" name="cantrips" value="mending" id="mending">
-									<label for="mending" class="label">Mending</label>
-									<input type="checkbox" class="message" name="cantrips" value="message" id="message">
-									<label for="message" class="label">Message</label>
-									<input type="checkbox" class="minorillusion" name="cantrips" value="minorillusion" id="minorillusion">
-									<label for="minorillusion" class="label">Minor Illusion</label>
-									<input type="checkbox" class="poisonspray" name="cantrips" value="poisonspray" id="poisonspray">
-									<label for="poisonspray" class="label">Poison Spray</label>
-									<input type="checkbox" class="prestidigitation" name="cantrips" value="prestidigitation" id="prestidigitation">
-									<label for="prestidigitation" class="label">Prestidigitation</label>
-									<input type="checkbox" class="rayoffrost" name="cantrips" value="rayoffrost" id="rayoffrost">
-									<label for="rayoffrost" class="label">Ray of Frost</label>
-									<input type="checkbox" class="shockinggrasp" name="cantrips" value="shockinggrasp" id="shockinggrasp">
-									<label for="shockinggrasp" class="label">Shocking Grasp</label>
-									<input type="checkbox" class="swordburst" name="cantrips" value="swordburst" id="swordburst">
-									<label for="swordburst" class="label">Sword Burst</label>
-									<input type="checkbox" class="truestrike" name="cantrips" value="truestrike" id="truestrike">
-									<label for="truestrike" class="label">True Strike</label>
-								</section>
 
 								<br><br>
 

@@ -1,0 +1,35 @@
+<html>
+
+
+<body>
+
+<script>
+  function myFunction(event) {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+  }
+
+  function scheduleA(event) {
+    alert(this.options[this.selectedIndex].text);
+  }
+
+</script>
+
+  <!-- <button onclick="myFunction.call(this, event)">Click Me</button> -->
+
+  <div id="myDIV">
+    This is my DIV element.
+  </div>
+
+  <select onchange="myFunction.call(this, event)">
+    <option>school a</option>
+    <option>school b</option>
+    <option>school c</option>
+  </select>
+
+</body>
+</html>
